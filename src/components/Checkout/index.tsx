@@ -11,6 +11,7 @@ const Checkout = () => {
   const calendar = useQuery({
     queryKey: ['calendar'],
     queryFn: getAll,
+    retry: 2,
   });
 
   const toCheckout = (hour: string) => {
@@ -61,6 +62,10 @@ const Checkout = () => {
         );
       }
     }
+    if (calendar.isLoading) {
+      return <div className='animate-bounce mt-4'>Loading</div>;
+    }
+    return <div className='mt-4'>No dates found</div>;
   };
 
   return (
