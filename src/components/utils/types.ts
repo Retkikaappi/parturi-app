@@ -27,6 +27,10 @@ export interface FinalOrder extends Order {
   };
 }
 
+export interface FinalOrderResponse extends FinalOrder {
+  id: string;
+}
+
 export interface Calendar {
   date: string;
   hours: [{ hour: string; available: boolean }];

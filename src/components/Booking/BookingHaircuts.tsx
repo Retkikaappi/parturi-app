@@ -110,7 +110,7 @@ const BookingHaircuts = () => {
   };
 
   return (
-    <div className='p-1 m-auto flex flex-col w-1/3 h-full border-2 border-slate-500'>
+    <div className='p-1 m-auto flex flex-col w-1/3 h-full'>
       <div className='w-1/1 mx-auto my-4'>
         <NLink to='/booking' text='Go back' end={true} />
       </div>

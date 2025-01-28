@@ -65,7 +65,10 @@ const Checkout = () => {
     if (calendar.isLoading) {
       return <div className='animate-bounce mt-4'>Loading</div>;
     }
-    return <div className='mt-4'>No dates found</div>;
+    if (calendar.isError) {
+      return <div className='mt-4'>No dates found</div>;
+    }
+    return <div className='mt-4'>Pick a date</div>;
   };
 
   return (

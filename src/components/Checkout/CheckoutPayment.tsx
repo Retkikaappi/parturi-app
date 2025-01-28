@@ -25,8 +25,8 @@ const CheckoutPayment = () => {
     mutationFn: (obj: FinalOrder) => {
       return postOrder(obj);
     },
-    onSuccess: () => {
-      nav('/success');
+    onSuccess: (order) => {
+      nav(`/success/${order.id}`);
     },
   });
 
@@ -37,14 +37,11 @@ const CheckoutPayment = () => {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    console.log(e);
     const { name, value } = e.target;
-    console.log(name, value);
     setFormValues({
       ...formValues,
       [name]: value,
     });
-    console.log(formValues);
   };
 
   const handlePayment = (e: React.SyntheticEvent) => {
